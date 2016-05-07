@@ -56,7 +56,7 @@ public class TickTimeline<DATA> {
 		}else if(tick == 0 || !timelineIterator.hasNext()) {
 			container = new Node<Collection<DATA>>();
 			timelineIterator.add(container);
-			timelineIterator.next();
+			//timelineIterator.next();
 		}else {
 			while(container == null && timelineIterator.hasNext()){
 				Node<Collection<DATA>> current = timelineIterator.next();
@@ -78,7 +78,7 @@ public class TickTimeline<DATA> {
 			if(container == null) {
 				container = new Node<Collection<DATA>>();
 				timelineIterator.add(container);
-				timelineIterator.next();
+				//timelineIterator.next();
 			}
 		}
 		
@@ -110,6 +110,17 @@ public class TickTimeline<DATA> {
 	
 	public boolean isEmpty() {
 		return timeline.isEmpty();
+	}
+	
+	@Override
+	public String toString() {
+		final StringBuilder s = new StringBuilder();
+		s.append("{");
+		for(final Node<Collection<DATA>> node : this.timeline) {
+			s.append(node.toString());
+		}
+		s.append("}");
+		return s.toString();
 	}
 
 }

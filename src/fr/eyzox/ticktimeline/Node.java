@@ -50,6 +50,6 @@ public class Node<W> {
 
 	@Override
 	public String toString() {
-		return new StringBuilder("Node [tick=").append(tick).append(", data=").append(data).append("]").toString();
+		return new StringBuilder("[tick=").append(tick).append(", data=").append(data).append("]").toString();
 	}
 }
